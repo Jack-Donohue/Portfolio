@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+    Student Name: Jack Donohue
+    File Name: code.html
+    Date: 12/08/2021
+-->
+<html lang="en">
+
+<head>
+    <title>Jacks Portfolio | Code</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A list of Jack's Technical abilities">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Vollkorn&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+</head>
+
+<body>
+    <div id="container">
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav">
+        <div id="menu-links">
+            <a href="index.html">Home</a>
+            <a href="art.html">Art</a>
+            <a href="code.html">Coding</a>
+        </div>
+        <a class="menu-icon" onclick="hamburger()">
+            <div>&#9776;</div>
+        </a>
+    </nav>
+        <!-- Use the header area for the website name or logo -->
+        <header id="cloud-banner">
+            <a href=index.html><img src="images/banner.png" alt="clouds"></a>
+            <h1>Jack Donohue</h1>
+            <h2>This is a portfolio</h2>
+            <figure>
+                <img src="images/jack.jpg" alt="Jack" class="JackHeaderFace">
+                <figcaption class="hidden">This is a portfolio</figcaption>
+            </figure>
+        </header>
+
+    <!-- Tablet, Desktop Nav -->
+    <nav class="tablet-desktop">
+        <ul>
+            <li><a href=art.html>Art </a></li>
+            <li><a href=index.html>Home</a></li>
+            <li><a href=code.html> Coding</a></li>
+        </ul>
+    </nav>
+
+    <!-- Use the main area to add the main content to the webpage -->
+    <main>
+        <Div class="open-a">
+            <article id=qualifications class="mobile">
+                <h2> Qualifications & Program Experience</h2>
+                <h4>Networking</h4>
+                <ul>
+                    <li>Networking Foundations</li>
+                </ul>
+
+                <h4>Programming</h4>
+                <ul>
+                    <li>Visual Basic</li>
+                    <li>HTML5, CSS, JavaScript</li>
+                    <li>Python (Minor)</li>
+                </ul>
+
+                <h4>Art</h4>
+                <ul>
+                    <li>Clip Studio</li>
+                    <li>Photoshop</li>
+                    <li>Cinema 4D</li>
+                </ul>
+
+                <h4>Video</h4>
+                <ul>
+                    <li>Clip Studio</li>
+                    <li>Davinchi Resolve</li>
+                    <li>Premier Pro</li>
+                    <li>Sony Vegas</li>
+                </ul>
+
+                <h4>Safety</h4>
+                <ul>
+                    <li>First Aid Training</li>
+                    <li>Water Safety</li>
+                </ul>
+            </article>
+            <table class="tablet-desktop">
+                <!-- I tried so many things to center this, but itlways resulted in a lines appearing over it-->
+                <!-- Start Table -->
+                <caption>Qualifications & Program Knowledge</caption>
+                <tr>
+                    <!-- Row 1 -->
+                    <th>Networking</th>
+                    <th>Programming</th>
+                    <th>Art Programs</th>
+                    <th>Video Software</th>
+                    <th>Safety Qualifications</th>
+                </tr>
+                <tr>
+                    <!-- Row 2 -->
+                    <td>Networking Foundation</td>
+                    <td>Visual Basic</td>
+                    <td>Clip Studio</td>
+                    <td>Clip Studio</td>
+                    <td>First Aid Training</td>
+                </tr>
+                <tr>
+                    <!-- Row 3 -->
+                    <td></td>
+                    <td>HTML5, CSS, JavaScript</td>
+                    <td>Photoshop</td>
+                    <td>Davinchi Resolve</td>
+                    <td>Water Safety</td>
+                </tr>
+                <tr>
+                    <!-- Row 4 -->
+                    <td></td>
+                    <td>Python (Minor)</td>
+                    <td>Cinema 4D</td>
+                    <td>Premier Pro</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <!-- Row 5 -->
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Sony Vegas</td>
+                    <td></td>
+                </tr>
+            </table> <!-- End Table-->
+        </Div>
+    </main>
+    <!-- Use the footer area to add webpage footer content -->
+        <!-- Use the footer area to add webpage footer content -->
+        <footer>
+            <div class="copyright">
+                <p><br>&copy; Copyright 2021. All Rights Reserved.</p>
+                <p><a href="mailto:jd28476@email.vccs.edu">jd28476@email.vccs.edu</a></p>
+            </div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/jack-donohue-7a3195213/" target="_blank"><img src="images/linkedInBlack.png" alt="Black Linked In Logo"></a>
+            </div>
+        </footer>
+    <script src="scripts/script.js"></script>
+    </div>
+</body>
+
+</html>

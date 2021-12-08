@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+    Student Name: Jack Donohue
+    File Name: art.html
+    Date: 12/08/2021
+-->
+<html lang="en">
+
+<head>
+    <title>Jacks Portfolio | Art</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A few of the things Jack has made">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Vollkorn&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+</head>
+
+
+<body>
+    <div id="container">
+
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav">
+            <div id="menu-links">
+                <a href="index.html">Home</a>
+                <a href="art.html">Art</a>
+                <a href="code.html">Coding</a>
+            </div>
+            <a class="menu-icon" onclick="hamburger()">
+                <div>&#9776;</div>
+            </a>
+        </nav>
+        <!-- Use the header area for the website name or logo -->
+        <header id="cloud-banner">
+            <a href=index.html><img src="images/banner.png" alt="clouds"></a>
+            <h1>Jack Donohue</h1>
+            <h2>This is a portfolio</h2>
+            <figure>
+                <img src="images/jack.jpg" alt="Jack" class="JackHeaderFace">
+                <figcaption class="hidden">This is a portfolio</figcaption>
+            </figure>
+        </header>
+
+        <!-- Tablet, Desktop Nav -->
+        <nav class="tablet-desktop">
+            <ul>
+                <li><a href=art.html>Art </a></li>
+                <li><a href=index.html>Home</a></li>
+                <li><a href=code.html> Coding</a></li>
+            </ul>
+        </nav>
+
+        <!-- Use the main area to add the main content to the webpage -->
+        <main class="art-grid open-a">
+            <article>
+                <img src="images/art3.png" alt="Present Icon" class="round">
+                <h4>Present Icon</h4>
+            </article>
+
+            <article>
+                <img src="images/art1.png" alt="Shogi Piece" class="round">
+                <h4>Shogi Piece</h4>
+            </article>
+
+            <article>
+                <video src="media/art2.mp4" autoplay controls loop class="round"></video>
+                <h4>Burger Photogrammety</h4>
+            </article>
+        </main>
+        <!-- Use the footer area to add webpage footer content -->
+        <footer>
+            <div class="copyright">
+                <p><br>&copy; Copyright 2021. All Rights Reserved.</p>
+                <p><a href="mailto:jd28476@email.vccs.edu">jd28476@email.vccs.edu</a></p>
+            </div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/jack-donohue-7a3195213/" target="_blank"><img src="images/linkedInBlack.png" alt="Black Linked In Logo"></a>
+            </div>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+http://www.exampledomain.com/index.html
+http://www.exampledomain.com/art.html
+http://www.exampledomain.com/social.html
+http://www.exampledomain.com/code.html

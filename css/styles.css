@@ -1,0 +1,581 @@
+/*
+Author: Jack Donohue
+Date: 2021/11/29
+File Name: styles.css
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, h1, div, img, ul, figure, figcaption, section, article, aside, audio, video  {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+.hidden {
+    display: none
+}
+
+/* Style rules for body and images */
+body {
+    background-color: #000;
+}
+
+img, video { 
+    max-width: 100%; 
+    display: block; 
+}
+
+/* Style rule for box sizing applies to all elements */
+*{
+    box-sizing: border-box;
+}
+
+/* Stle rules for mobile viewport */
+
+/* Style rule for header */
+header {
+    top: 0;
+    background-color: #000;
+    height: auto;
+}
+
+header h1, header h2 {
+    color: #05ADF1;
+    position: absolute;
+    font-size: 8vw;
+    top: 5vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.JackHeaderFace {
+    position: absolute;
+    top: 0vw;
+    max-width: 15vw;
+    max-height: 15vw;
+    border-radius: 0 0 20px 0;
+}
+
+header a img {
+    margin: 0 auto;
+}
+
+/* Style for rules for hamburger menu */
+.mobile-nav a {
+    color: #05ADF1;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 3%;
+    display: block;
+}
+
+.mobile-nav a.menu-icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Show mobile class, hide tablet-desktop class and menu-links id */
+.mobile {
+    display: block;
+ }
+
+.tablet-desktop, #menu-links {
+    display: none;
+}
+
+/* Style rules for main content */
+main {
+    text-align: center;
+    background-color: #000;
+    padding: 0%;
+    font-size: 1.15em;
+    font-family: 'Vollkorn', serif;
+}
+
+.open-a {
+    background-color: #fff;
+}
+
+.open-a img {
+    margin: 0 auto;
+    max-height: 500px;
+    border-radius: 5%;
+    align-content: center;
+}
+.art-grid {
+    color: #fff;
+    background-color: #000;
+}
+
+video {
+    margin: 0 auto 4%;
+}
+
+.mobile h3 {
+    text-shadow: 5px 5px 8px #ccc;
+}
+
+article {
+    background-color: #1b1a1a;
+    padding: 2%;
+    border-radius: 8px;
+}
+
+article h3 {
+    text-align: center;
+}
+
+article img {
+    margin: 0 auto;
+}
+
+article ul {
+    margin-left: 10%;
+}
+
+article:nth-of-type(2){
+    background-color: rgba(37, 35, 35, 0.3);
+}
+
+.tel-link {
+    background-color: #404040;
+    padding: 2%;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tel-link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: block;
+}
+
+.hours {
+    margin-left: 10%;
+}
+
+.action {
+    font-size: 1.35em;
+    color: #666600;
+    font-weight: bold;
+    text-shadow: 5px 5px 8px #ccc;
+}
+
+.frame {
+    position: relative;
+    max-width: 450px;
+    margin: 2% auto;
+}
+
+.pic-text {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Montserrat', Verdana, Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#weights, #cardio, #training {
+    margin: 0 2%;
+}
+
+.round {
+    border-radius: 8px;
+}
+
+.external-link {
+    color: #666600;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#contact {
+    text-align: center;
+}
+
+#contact .contact-email-link {
+    color: #2ec4ff;
+    text-decoration: none;
+}
+
+.map {
+    border: 2px solid #000;
+    width: 95%;
+    height: 50%;
+}
+
+#qualifications {
+    text-align: left;
+    color: rgb(0, 0, 0);
+    background-color: #fff;
+}
+
+#form {
+    margin-top: 2%;
+    background-color: #f2f2f2;
+    padding: 2%;
+}
+
+#form h2 {
+    text-align: center;
+}
+
+/* Style rules for form elements */ 
+fieldset, input, select, textarea {
+    margin-bottom: 2%;
+}
+
+fieldset legend {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+label {
+    display: block;
+    padding-top: 3%;
+}
+
+form #submit {
+    margin: 0 auto;
+    border: none;
+    display: block;
+    padding: 2%;
+    background-color: #b3b3b3;
+    font-size: 1em;
+    border-radius: 4px;
+}
+
+/* Style rules for footer content */
+footer {
+    background-color: #05ADF1;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    max-height: 90px;
+}
+
+footer .copyright {
+    top: 10%;
+    font-size: 1em;
+    text-align: center;
+    color: #000000;
+    background-color: #05ADF1;
+}
+
+footer p a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background-color: #05ADF1;
+}
+
+.social {
+    position: relative;
+    bottom: 40px;
+    width: 40px;
+    padding: 1%;
+    background-color: #05ADF1;
+}
+
+.social img {
+    display: inline-block;
+    padding: 5%;
+    background-color: #05ADF1;
+}
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 630px),print {
+
+    /* Tablet Viewport: Show tablet-desktop class, hide mobile class */
+    .tablet-desktop {
+        display: block;
+     }
+
+     .mobile, .mobile-nav {
+        display: none;
+     }
+
+     /* Tablet Viewport: Style rule for header */ 
+     header {
+        padding-bottom: 0;
+    }
+
+    header h1, header h2 {
+        top: 4vw;
+    }
+
+    /* Tablet Viewport: Style rules for nav area */
+    nav {
+        background-color: #05ADF1;
+        padding: 1%;
+        margin-bottom: 1%;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        text-align: center;
+    }
+    
+    nav li {
+        font-size: 1.5em;
+        font-family: 'Montserrat', sans-serif;
+        display: inline-block;
+        border-right: 1px solid #000;
+    }
+
+    nav li:last-child {
+        border-right: none;
+    }
+
+    nav li a { 
+        padding: 0.1em 0.75em;
+        display: block;
+        color: #000;
+        text-decoration: none;
+    }
+
+    /* Tablet Viewport: Style rules for main content area */
+    main ul {
+        margin: 0 0 4% 10%;
+    }
+
+    .art-grid {
+        background-color: rgb(0, 0, 0);
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .grid-pages {
+        background-color: rgb(0, 0, 0);
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+
+    .pic-text {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    aside {
+        text-align: center;
+        font-size: 1.25em;
+        font-style: italic;
+        font-weight: bold;
+        padding: 2%;
+        background-color: rgba(204, 204, 204, 0.5);
+        box-shadow: 5px 5px 8px #000;
+        text-shadow: 5px 5px 5px #b3b3b3;
+        border-radius: 0 15px;
+    }
+
+    .grid-item4 {
+        grid-column: 1 / span 3;
+    }
+
+    .viewex {
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #example {
+        display: none;
+    }
+
+    .tel-num {
+        font-size: 1.25em;
+    }
+
+    .map {
+        width: 600px;
+        height: 450px;
+    }
+
+    /* Tablet Viewport: Style rules for table */
+    /*I for the life of me cannot get the boxes to center and be even sizes. */
+    table {
+        border: 1px solid #000;
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    caption {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 1%;
+        color: rgb(0, 0, 0);
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 2%;
+    }
+
+    th {
+        background-color: #000;
+        color: #fff;
+        font-size: 1.2em;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #ccc;
+    }
+
+    /* Tablet Viewport: Style rule for form element */
+    form {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    /* Tablet Viewport: Animation */
+    /* @-webkit-keyframes text-animation {
+        0% { font-size: 1em; }
+        50% { font-size: 2em; }
+        100% { font-size: 1.35em; }
+    }
+
+    @keyframes text-animation {
+        0% { font-size: 1em; }
+        50% { font-size: 2em; }
+        100% { font-size: 1.35em; }
+    }
+
+    figcaption {
+        -webkit-animation-name: text-animation;
+        animation-name: text-animation;
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+        -webkit-animation-duration: 0s;
+        animation-duration: 0s;
+    } */
+
+    .social {
+        bottom: 80px;
+        width: 80px;
+    }
+    
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 1015px),print {
+
+    /* Desktop Viewport: Style rule for header */
+
+    /* Desktop Viewport: Style rules for nav area */
+    nav {
+        float: none;
+        width: 100%;
+    }
+
+    header h1, header h2 {
+        top: 70px;
+        font-size: 5.5em;
+    }
+    
+
+    nav li a:hover {
+        color: #000;
+        background-color: #fff;
+        transform: scale(1.3);
+    }
+
+    /* Desktop Viewport: Style Rules for main content */
+    main {
+        clear: left;
+    }
+
+    main h1 {
+        font-size: 1.8em;
+    }
+
+    article h3 {
+        font-size: 1.75em;
+    }
+    
+    .pic-text {
+        font-size: 1.5em;
+        padding: 20px;
+    }
+
+    .frame {
+        opacity: 0.9;
+    }
+
+    .frame:hover {
+        opacity: 1;
+        box-shadow: 8px 8px 10px #05ADF1;
+        transform: translateY(10px);
+    }
+
+    #weights, #cardio, #training {
+        width: 29%;
+        float: left;
+        margin: 0 2%;
+    }
+
+    #exercises {
+        clear: left;
+    }
+
+    .offer:hover {
+        transform: scale(1.25);
+        cursor: pointer;
+    }
+    
+    /* Desktop Viewport: Style rules for form elements */
+    form {
+        width: auto;
+    }
+
+    .form-grid {
+        display: grid; 
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+
+    .btn {
+        grid-column: 1 / span 3;
+    }
+
+}
+
+/* Media Query for Large Desktop Viewports */
+@media screen and (min-width: 1921px) {
+
+    #container {
+        width: 1920px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 80%;
+    }
+
+}
+
+/* Media Query for Print */
+@media print {
+
+    body {
+        background-color: #fff; 
+        color: #000;
+    }
+
+}

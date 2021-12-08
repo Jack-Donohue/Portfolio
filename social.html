@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+    Student Name: Jack Donohue
+    File Name: social.html
+    Date: 12/08/2021
+-->
+<html lang="en">
+
+<head>
+    <title>Jacks Portfolio | Contact</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Where Jack can be contacted">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Vollkorn&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" sizes="192x192" href="images/android-chrome-192.png">
+</head>
+
+
+<body>
+    <div id="container">
+
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav">
+            <div id="menu-links">
+                <a href="index.html">Home</a>
+                <a href="art.html">Art</a>
+                <a href="code.html">Coding</a>
+            </div>
+            <a class="menu-icon" onclick="hamburger()">
+                <div>&#9776;</div>
+            </a>
+        </nav>
+        <!-- Use the header area for the website name or logo -->
+        <header id="cloud-banner">
+            <a href=index.html><img src="images/banner.png" alt="clouds"></a>
+            <h1>Jack Donohue</h1>
+            <h2>This is a portfolio</h2>
+            <figure>
+                <img src="images/jack.jpg" alt="Jack" class="JackHeaderFace">
+                <figcaption class="hidden">This is a portfolio</figcaption>
+            </figure>
+        </header>
+
+        <!-- Tablet, Desktop Nav -->
+        <nav class="tablet-desktop">
+            <ul>
+                <li><a href=art.html>Art </a></li>
+                <li><a href=index.html>Home</a></li>
+                <li><a href=code.html> Coding</a></li>
+            </ul>
+        </nav>
+
+        <!-- Use the main area to add the main content to the webpage -->
+        <main>
+            <div id="contact" class="open-a">
+                <h4><a href="https://www.linkedin.com/in/jack-donohue-7a3195213/">Linked In</a></h4>
+                <h4><a href="mailto:jd28476@email.vccs.edu" class="contact-email-link">jd28476@email.vccs.edu</a></h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2667.5363157063134!2d-76.75605083182342!3d37.33651467553139!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b0886b299d156d%3A0xeeabf41dccc1ffe7!2sThomas%20Nelson%20Community%20College%2C%20Historic%20Triangle%20Campus!5e0!3m2!1sen!2sus!4v1638410490090!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" class="map"></iframe>
+            </div>
+        </main>
+        <!-- Use the footer area to add webpage footer content -->
+        <footer>
+            <div class="copyright">
+                <p><br>&copy; Copyright 2021. All Rights Reserved.</p>
+                <p><a href="mailto:jd28476@email.vccs.edu">jd28476@email.vccs.edu</a></p>
+            </div>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/jack-donohue-7a3195213/" target="_blank"><img src="images/linkedInBlack.png" alt="Black Linked In Logo"></a>
+            </div>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </div>
+</body>
+
+</html>
