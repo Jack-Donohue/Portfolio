@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Router Startup Commands</title>
+  <style>
+    body {
+        background-color: aliceblue;
+    }
+    .output {
+      white-space: pre-line;
+      font-family: monospace;
+    }
+    #tableContainer{
+        display: block;
+        border: 1px black;
+        background-color: white;
+        width: 90vw;
+        margin-left: auto;   
+        margin-right: auto;
+    }
+
+
+  </style>
+  <script>
+    function extractRows() {
+      var tableContainer = document.getElementById('tableContainer');
+      var table = tableContainer.querySelector('table');
+
+      if (table === null) {
+        console.error('No table found in the provided data.');
+        return;
+      }
+
+      var rows = table.getElementsByTagName('tr');
+
+      var rowArrays = [];
+
+      for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].getElementsByTagName('td');
+        var rowArray = [];
+
+        for (var j = 0; j < cells.length; j++) {
+          var cellText = cells[j].innerText.trim();
+          rowArray.push(cellText);
+        }
+
+        if (rowArray.length > 0) {
+          rowArrays.push(rowArray);
+        }
+      }
+
+      var routerCommands = generateRouterCommands(rowArrays);
+      displayCommands(routerCommands);
+    }
+
+    function generateRouterCommands(rowArrays) {
+      var routerCommands = [];
+
+      for (var i = 1; i < rowArrays.length; i++) {
+        var row = rowArrays[i];
+        var Vsystem = row[0];
+        var Vport = row[1];
+        var Vgoing = row[2];
+        var Vip = row[3];
+        var Vnetmask = row[4];
+        var Vclock = row[5];
+
+        var interfaceCommands = [];
+
+        if (Vsystem.includes('-')) {
+            interfaceCommands.push('');
+            interfaceCommands.push('');
+            interfaceCommands.push('!-- System ' + Vsystem);
+        }
+
+        
+        
+        if (Vport.includes('.')) {
+            var encapsulationCommand = 'interface ' + Vport.split('.')[0];
+            interfaceCommands.push(encapsulationCommand);
+            interfaceCommands.push('no shutdown');
+
+            interfaceCommands.push('interface ' + Vport);
+            var encapsulationCommand = 'encapsulation dot1q ' + Vport.split('.')[1];
+            interfaceCommands.push(encapsulationCommand);
+        }
+
+        else {
+            interfaceCommands.push('interface ' + Vport);
+            interfaceCommands.push('no shutdown');
+        }
+
+        interfaceCommands.push('ip address ' + Vip + ' ' + Vnetmask);
+
+        if (Vclock !== '') {
+          interfaceCommands.push('clock rate ' + Vclock);
+        }
+
+        interfaceCommands.push('');
+
+        routerCommands = routerCommands.concat(interfaceCommands);
+      }
+
+      return routerCommands;
+    }
+
+    function displayCommands(commands) {
+      var output = document.getElementById('output');
+      output.textContent = commands.join('\n');
+    }
+  </script>
+</head>
+<body>
+    <h1>CIS202 Cisco Jack-knife Table Converter</h1>
+    <h5>Must be ordered: System - Port - Connected To - IP Address - Subnet Mask - Clock Rate</h5>
+
+  <div id="tableContainer" class="table-container" contenteditable="true">
+    <!-- Paste Word table here -->
+  </div>
+  <br>
+  <button onclick="extractRows()">Generate Router Commands</button>
+  <pre id="output" class="output"></pre>
+</body>
+</html>
