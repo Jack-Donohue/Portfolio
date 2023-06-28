@@ -18,7 +18,19 @@
         margin-left: auto;   
         margin-right: auto;
     }
-
+    .foot{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 15px;
+        background-color: white;
+        color: black;
+        text-align: center;
+    }
+    .foottext{
+        margin: 0;
+    }
 
   </style>
   <script>
@@ -119,6 +131,11 @@
   </div>
   <br>
   <button onclick="extractRows()">Generate Router Commands</button>
+  <p>Dont forget to put yourself in privileged configuration mode</p>
   <pre id="output" class="output"></pre>
+    <p>&nbsp</p>
 </body>
+<div class="foot">
+    <p class="foottext">Jack Donohue 2023</p>
+</div>
 </html>
