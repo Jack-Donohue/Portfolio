@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Generate Router Startup Commands</title>
   <style>
     body {
-        background-color: aliceblue;
+      background-color: aliceblue;
     }
+
     .output {
       white-space: pre-line;
       font-family: monospace;
     }
-    #tableContainer{
-        display: block;
-        border: 1px black;
-        background-color: white;
-        width: 90vw;
-        margin-left: auto;   
-        margin-right: auto;
-    }
-    .foot{
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 15px;
-        background-color: white;
-        color: black;
-        text-align: center;
-    }
-    .foottext{
-        margin: 0;
+
+    #tableContainer {
+      display: block;
+      border: 1px black;
+      background-color: white;
+      width: 90vw;
+      margin-left: auto;
+      margin-right: auto;
     }
 
+    .foot {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 15px;
+      background-color: white;
+      color: black;
+      text-align: center;
+    }
+
+    .foottext {
+      margin: 0;
+    }
+
+    #changelogbut {
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
   </style>
   <script>
     function extractRows() {
@@ -80,31 +90,36 @@
         var interfaceCommands = [];
 
         if (Vsystem.includes('-')) {
-            interfaceCommands.push('');
-            interfaceCommands.push('');
-            interfaceCommands.push('!-- System ' + Vsystem);
+          interfaceCommands.push('');
+          interfaceCommands.push('');
+          interfaceCommands.push('!-- System ' + Vsystem);
         }
 
-        
-        
-        if (Vport.includes('.')) {
-            var encapsulationCommand = 'interface ' + Vport.split('.')[0];
-            interfaceCommands.push(encapsulationCommand);
-            interfaceCommands.push('no shutdown');
 
-            interfaceCommands.push('interface ' + Vport);
-            var encapsulationCommand = 'encapsulation dot1q ' + Vport.split('.')[1];
-            interfaceCommands.push(encapsulationCommand);
+
+        if (Vport.includes('.')) {
+          var encapsulationCommand = 'interface ' + Vport.split('.')[0];
+          interfaceCommands.push(encapsulationCommand);
+          interfaceCommands.push('no shutdown');
+
+          interfaceCommands.push('interface ' + Vport);
+          var encapsulationCommand = 'encapsulation dot1q ' + Vport.split('.')[1];
+          interfaceCommands.push(encapsulationCommand);
         }
 
         else {
-            interfaceCommands.push('interface ' + Vport);
-            interfaceCommands.push('no shutdown');
+          interfaceCommands.push('interface ' + Vport);
+          interfaceCommands.push('no shutdown');
         }
 
+        if (Vip.includes('.')) {
         interfaceCommands.push('ip address ' + Vip + ' ' + Vnetmask);
+        }
+        if (Vip.includes(":")){
+        interfaceCommands.push('ipv6 address ' + Vip);
+        }
 
-        if (Vclock !== '') {
+        if (typeof Vclock !== 'undefined' && Vclock !== '') {
           interfaceCommands.push('clock rate ' + Vclock);
         }
 
@@ -122,20 +137,46 @@
     }
   </script>
 </head>
-<body>
-    <h1>CIS202 Cisco Jack-knife Table Converter</h1>
-    <h5>Must be ordered: System - Port - Connected To - IP Address - Subnet Mask - Clock Rate</h5>
 
-  <div id="tableContainer" class="table-container" contenteditable="true">
-    <!-- Paste Word table here -->
-  </div>
+<dialog id="d">
+  <form method="dialog">
+    <h1>Changelog</h1>
+    <h3>2023-07-1</h3>
+    <ul>
+      <li>Will no longer output undefined if clock rate row does not exist.</li>
+      <li>Will check if an IP is IPv6 or IPv4 by looking for periods and colons, inserting the appropriate command where necessary.</li>
+      <li>Added Changelog.</li>
+    </ul>
+    
+
+    <h3>2023-06-24</h3>
+    <ul>
+      <li>First Release.</li>
+    </ul>
+    
+  </form>
+  <button onclick="d.close()">Close</button>
+
+</dialog>
+
+<body>
+  <h1>CIS202 Cisco Jack-knife Table Converter</h1>
+  <h5>Must be ordered: System - Port - Connected To - IP Address - Subnet Mask - Clock Rate</h5>
+    <div id="tableContainer" class="table-container" contenteditable="true">
+      <!-- Paste Word table here -->
+    </div>
   <br>
   <button onclick="extractRows()">Generate Router Commands</button>
   <p>Dont forget to put yourself in privileged configuration mode</p>
   <pre id="output" class="output"></pre>
-    <p>&nbsp</p>
+  <p>&nbsp</p>
 </body>
-<div class="foot">
-    <p class="foottext">Jack Donohue 2023</p>
+
+<div id="changelogbut">
+  <button onclick="d.showModal();">Changelog</button>
 </div>
+<div class="foot">
+  <p class="foottext">Jack Donohue 2023</p>
+</div>
+
 </html>
